@@ -9,11 +9,11 @@ def evaluate_resume(text):
     feedback = []
 
     if word_count < 100:
-        feedback.append("🔍 Your resume seems short. Consider adding more detail.")
+        feedback.append(" Your resume seems short. Consider adding more detail.")
     if not keywords_found:
-        feedback.append("⚠️ No relevant keywords found. Try including industry-specific terms.")
+        feedback.append("No relevant keywords found. Try including industry-specific terms.")
     if "Objective" not in text:
-        feedback.append("💡 Consider adding an 'Objective' section to clarify your goals.")
+        feedback.append("Consider adding an 'Objective' section to clarify your goals.")
 
     return {
         "word_count": word_count,
@@ -50,11 +50,11 @@ def upload_resume():
         for tip in results["feedback"]:
             output_text += f"{tip}\n"
     else:
-        output_text += "🎉 Excellent! Your resume is well-optimized."
+        output_text += " Excellent! Your resume is well-optimized."
 
     result_display.delete("1.0", tk.END)
     result_display.insert(tk.END, output_text)
-    status_label.config(text="Analysis complete ✅")
+    status_label.config(text="Analysis complete ")
 
 # GUI Setup
 root = tk.Tk()
